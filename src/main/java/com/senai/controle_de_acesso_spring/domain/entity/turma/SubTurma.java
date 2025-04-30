@@ -6,7 +6,7 @@ import com.senai.controle_de_acesso_spring.domain.entity.usuarios.aluno.Aluno;
 import jakarta.persistence.*;
 
 import java.util.List;
-
+@Entity
 public class SubTurma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +20,11 @@ public class SubTurma {
     @ManyToMany(mappedBy = "subTurmas")
     private List<Aluno> alunos;
 
-    @OneToOne(mappedBy = "subTurma", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "horario_padrao_id")
     private HorarioPadrao horarioPadrao;
 
-    @OneToMany(mappedBy = "subTurma", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sub_turma_id") // essa coluna será usada pelos HorariosSemanais
     private List<HorarioSemanal> horariosSemanais;
 }

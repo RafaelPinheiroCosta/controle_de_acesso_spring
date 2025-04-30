@@ -7,7 +7,7 @@ import com.senai.controle_de_acesso_spring.domain.enuns.TipoDeOcorrencia;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-
+@Entity
 public class Ocorrencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
