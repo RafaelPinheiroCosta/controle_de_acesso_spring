@@ -20,5 +20,4 @@ public abstract class HorarioBase {
 
     @OneToMany(mappedBy = "horario", cascade = CascadeType.ALL, orphanRemoval = true)
     protected List<AulasDoDia> diasDaSemana;
-
 }

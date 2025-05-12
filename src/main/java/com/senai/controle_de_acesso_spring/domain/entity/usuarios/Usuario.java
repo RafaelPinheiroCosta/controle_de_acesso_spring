@@ -21,6 +21,7 @@ public abstract class Usuario {
     protected String idAcesso;
     protected String email;
     protected String senha;
+    protected boolean ativo;
 
     @ElementCollection(fetch = FetchType.EAGER)
     protected List<String> permissoes;

@@ -4,10 +4,9 @@ import com.senai.controle_de_acesso_spring.application.dto.UsuarioDTO;
 import com.senai.controle_de_acesso_spring.application.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -21,5 +20,33 @@ public class UsuarioController {
     public ResponseEntity<Void> cadastrarUsuario(@RequestBody UsuarioDTO dto) {
         usuarioService.cadastrarUsuario(dto);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UsuarioDTO> buscarPorId(@PathVariable Long id) {
+        return usuarioService.buscarPorId(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/ativos")
+    public ResponseEntity<List<UsuarioDTO>> listarAtivos() {
+        return ResponseEntity.ok(usuarioService.listarAtivos());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> atualizar(@PathVariable Long id, @RequestBody UsuarioDTO dto) {
+        if (usuarioService.atualizar(id, dto)) {
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> inativar(@PathVariable Long id) {
+        if (usuarioService.inativar(id)) {
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }

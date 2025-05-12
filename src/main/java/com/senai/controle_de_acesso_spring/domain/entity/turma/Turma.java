@@ -23,6 +23,6 @@ public class Turma {
     @ManyToOne
     private Curso curso;
 
-    @OneToMany(mappedBy = "turma")
+    @OneToMany
     private List<SubTurma> subTurmas;
 }
