@@ -4,22 +4,25 @@ import com.senai.controle_de_acesso_spring.domain.entity.turma.horarios.HorarioP
 import com.senai.controle_de_acesso_spring.domain.entity.turma.horarios.HorarioSemanal;
 import com.senai.controle_de_acesso_spring.domain.entity.usuarios.aluno.Aluno;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 @Entity
+@Data
 public class SubTurma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     @ManyToOne
+    @JoinColumn(name = "turma_id")
     private Turma turma;
-    @ManyToMany(mappedBy = "subTurmas")
+
+    @OneToMany(mappedBy = "subTurma", cascade = CascadeType.ALL)
     private List<Aluno> alunos;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "horario_padrao_id")
-    private HorarioPadrao horarioPadrao;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "sub_turma_id") // essa coluna será usada pelos HorariosSemanais
-    private List<HorarioSemanal> horariosSemanais;
+
+    @OneToMany(mappedBy = "subTurma", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Semestre> semestres;
 }

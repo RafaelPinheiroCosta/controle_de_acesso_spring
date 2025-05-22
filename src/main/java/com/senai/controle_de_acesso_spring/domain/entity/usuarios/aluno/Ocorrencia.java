@@ -5,9 +5,11 @@ import com.senai.controle_de_acesso_spring.domain.entity.usuarios.Professor;
 import com.senai.controle_de_acesso_spring.domain.enuns.StatusDaOcorrencia;
 import com.senai.controle_de_acesso_spring.domain.enuns.TipoDeOcorrencia;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 @Entity
+@Data
 public class Ocorrencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

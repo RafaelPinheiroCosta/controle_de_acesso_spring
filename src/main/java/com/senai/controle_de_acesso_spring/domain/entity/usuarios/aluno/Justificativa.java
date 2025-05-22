@@ -3,10 +3,12 @@ package com.senai.controle_de_acesso_spring.domain.entity.usuarios.aluno;
 import com.senai.controle_de_acesso_spring.domain.enuns.StatusDaJustificativa;
 import com.senai.controle_de_acesso_spring.domain.enuns.TipoDeJustificativa;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 
 @Entity
+@Data
 public class Justificativa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

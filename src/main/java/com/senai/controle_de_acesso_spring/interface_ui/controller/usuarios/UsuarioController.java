@@ -1,7 +1,7 @@
-package com.senai.controle_de_acesso_spring.interface_ui.controller;
+package com.senai.controle_de_acesso_spring.interface_ui.controller.usuarios;
 
-import com.senai.controle_de_acesso_spring.application.dto.UsuarioDTO;
-import com.senai.controle_de_acesso_spring.application.service.UsuarioService;
+import com.senai.controle_de_acesso_spring.application.dto.usuarios.UsuarioDTO;
+import com.senai.controle_de_acesso_spring.application.service.usuarios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +29,7 @@ public class UsuarioController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/ativos")
+    @GetMapping
     public ResponseEntity<List<UsuarioDTO>> listarAtivos() {
         return ResponseEntity.ok(usuarioService.listarAtivos());
     }

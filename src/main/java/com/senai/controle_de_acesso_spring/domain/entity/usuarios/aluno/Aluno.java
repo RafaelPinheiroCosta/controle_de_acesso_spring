@@ -2,15 +2,14 @@ package com.senai.controle_de_acesso_spring.domain.entity.usuarios.aluno;
 
 import com.senai.controle_de_acesso_spring.domain.entity.usuarios.Usuario;
 import com.senai.controle_de_acesso_spring.domain.entity.turma.SubTurma;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 
 @Entity
+@Data
 @DiscriminatorValue("ALUNO")
 public class Aluno extends Usuario {
     @OneToMany(mappedBy = "aluno")
@@ -19,6 +18,7 @@ public class Aluno extends Usuario {
     @OneToMany(mappedBy = "aluno")
     private List<Justificativa> justificativas;
 
-    @ManyToMany
-    private List<SubTurma> subTurmas;
+    @ManyToOne
+    @JoinColumn(name = "sub_turma_id") // FK na tabela aluno
+    private SubTurma subTurma;
 }

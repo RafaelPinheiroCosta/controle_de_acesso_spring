@@ -1,4 +1,4 @@
-package com.senai.controle_de_acesso_spring.application.dto;
+package com.senai.controle_de_acesso_spring.application.dto.usuarios;
 
 import com.senai.controle_de_acesso_spring.domain.entity.usuarios.AQV;
 import com.senai.controle_de_acesso_spring.domain.entity.usuarios.Coordenador;
@@ -15,6 +15,7 @@ public record UsuarioDTO(
         String cpf,
         LocalDate dataNascimento,
         String email,
+        String idAcesso,
         TipoDeUsuario tipoDeUsuario
 ) {
     public static UsuarioDTO toDTO(Usuario u) {
@@ -25,7 +26,15 @@ public record UsuarioDTO(
             case AQV aqv -> TipoDeUsuario.AQV;
             default -> throw new IllegalArgumentException("Tipo de usuário desconhecido");
         };
-        return new UsuarioDTO(u.getId(), u.getNome(), u.getCpf(), u.getDataNascimento(), u.getEmail(), tipo);
+        return new UsuarioDTO(
+                u.getId(),
+                u.getNome(),
+                u.getCpf(),
+                u.getDataNascimento(),
+                u.getEmail(),
+                u.getIdAcesso(),
+                tipo
+        );
     }
 
     public Usuario fromDTO() {
@@ -41,7 +50,7 @@ public record UsuarioDTO(
         usuario.setEmail(email);
         usuario.setDataNascimento(dataNascimento);
         usuario.setAtivo(true);
-        usuario.setIdAcesso("");
+        usuario.setIdAcesso(idAcesso);
         usuario.setSenha("");
         return usuario;
     }
