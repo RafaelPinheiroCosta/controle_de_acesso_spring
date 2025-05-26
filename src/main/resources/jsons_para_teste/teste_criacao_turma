@@ -1,0 +1,11 @@
+URL: http://localhost:8080/turma
+
+{
+  "siglaDaTurma": "DEV",
+  "periodo": "MANHA",
+  "dataInicial": "2025-01-19",
+  "horarioEntrada": "08:00",
+  "qtdSemestres": 4,
+  "qtdAulasPorDia": 5,
+  "cursoId": 1
+}

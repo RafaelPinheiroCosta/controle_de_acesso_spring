@@ -18,7 +18,6 @@ public record AulaDTO(
                 a.getProfessor() != null ? a.getProfessor().getId() : null,
                 a.getAmbiente() != null ? a.getAmbiente().getId() : null
         );
-
     }
 
     public Aula fromDTO() {

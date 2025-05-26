@@ -1,0 +1,4 @@
+não tem corpo a requisição somente a URL abaixo, só passar na path o id da turma que pertence a subturma:
+
+http://localhost:8080/subturmas/1
+

@@ -1,0 +1,58 @@
+passar na path o id do semestre que pertence o horario padrão.
+
+URL: http://localhost:8080/horario-padrao/1
+
+{
+  "listaDeAulasDoDia": [
+    {
+      "diaDaSemana": "SEGUNDA",
+      "aulas": [
+        { "unidadeCurricularId": 1, "professorId": 1, "ambienteId": 1 },
+        { "unidadeCurricularId": 2, "professorId": 2, "ambienteId": 2 },
+        { "unidadeCurricularId": 3, "professorId": 3, "ambienteId": 3 },
+        { "unidadeCurricularId": 4, "professorId": 4, "ambienteId": 4 },
+        { "unidadeCurricularId": 5, "professorId": 5, "ambienteId": 5 }
+      ]
+    },
+    {
+      "diaDaSemana": "TERCA",
+      "aulas": [
+        { "unidadeCurricularId": 1, "professorId": 1, "ambienteId": 1 },
+        { "unidadeCurricularId": 2, "professorId": 2, "ambienteId": 2 },
+        { "unidadeCurricularId": 3, "professorId": 3, "ambienteId": 3 },
+        { "unidadeCurricularId": 4, "professorId": 4, "ambienteId": 4 },
+        { "unidadeCurricularId": 5, "professorId": 5, "ambienteId": 5 }
+      ]
+    },
+    {
+      "diaDaSemana": "QUARTA",
+      "aulas": [
+        { "unidadeCurricularId": 1, "professorId": 1, "ambienteId": 1 },
+        { "unidadeCurricularId": 2, "professorId": 2, "ambienteId": 2 },
+        { "unidadeCurricularId": 3, "professorId": 3, "ambienteId": 3 },
+        { "unidadeCurricularId": 4, "professorId": 4, "ambienteId": 4 },
+        { "unidadeCurricularId": 5, "professorId": 5, "ambienteId": 5 }
+      ]
+    },
+    {
+      "diaDaSemana": "QUINTA",
+      "aulas": [
+        { "unidadeCurricularId": 1, "professorId": 1, "ambienteId": 1 },
+        { "unidadeCurricularId": 2, "professorId": 2, "ambienteId": 2 },
+        { "unidadeCurricularId": 3, "professorId": 3, "ambienteId": 3 },
+        { "unidadeCurricularId": 4, "professorId": 4, "ambienteId": 4 },
+        { "unidadeCurricularId": 5, "professorId": 5, "ambienteId": 5 }
+      ]
+    },
+    {
+      "diaDaSemana": "SEXTA",
+      "aulas": [
+        { "unidadeCurricularId": 1, "professorId": 1, "ambienteId": 1 },
+        { "unidadeCurricularId": 2, "professorId": 2, "ambienteId": 2 },
+        { "unidadeCurricularId": 3, "professorId": 3, "ambienteId": 3 },
+        { "unidadeCurricularId": 4, "professorId": 4, "ambienteId": 4 },
+        { "unidadeCurricularId": 5, "professorId": 5, "ambienteId": 5 }
+      ]
+    }
+  ]
+}

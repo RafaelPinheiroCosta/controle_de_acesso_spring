@@ -23,6 +23,7 @@ public record AulasDoDiaDTO(
         AulasDoDia dia = new AulasDoDia();
         dia.setDiaDaSemana(diaDaSemana);
         dia.setAulas(aulas.stream().map(AulaDTO::fromDTO).toList());
+
         return dia;
     }
 }

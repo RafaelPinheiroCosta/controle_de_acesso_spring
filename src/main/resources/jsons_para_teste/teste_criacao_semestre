@@ -1,0 +1,3 @@
+não tem corpo a requisição somente a URL abaixo, só passar na path o id da subturma que pertence o semestre:
+
+http://localhost:8080/subturmas/1/semestres
