@@ -37,13 +37,16 @@ public class TurmaService {
         turma.setCurso(curso);
 
         SubTurma subTurma = new SubTurma();
+        turma.setSubTurmas(new ArrayList<>());
         turma.getSubTurmas().add(subTurma);
 
         subTurma.setNome("Turma "+ turma.getSubTurmas().size());
         subTurma.setTurma(turma);
 
         Semestre semestre = new Semestre();
+        subTurma.setSemestres(new ArrayList<>());
         subTurma.getSemestres().add(semestre);
+
         semestre.setNomeDaTurma(
                 subTurma.getSemestres().size() +
                         subTurma.getTurma().getSiglaDaTurma() +

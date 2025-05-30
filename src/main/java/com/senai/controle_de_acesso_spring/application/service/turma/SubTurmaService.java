@@ -41,6 +41,7 @@ public class SubTurmaService {
         turma.getSubTurmas().add(subTurma);
 
         Semestre semestre = new Semestre();
+        subTurma.setSemestres(new ArrayList<>());
         subTurma.getSemestres().add(semestre);
 
         semestre.setNumero(subTurma.getSemestres().size());

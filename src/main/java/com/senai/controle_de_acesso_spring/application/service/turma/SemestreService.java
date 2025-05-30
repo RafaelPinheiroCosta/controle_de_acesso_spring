@@ -33,6 +33,7 @@ public class SemestreService {
                 .orElseThrow(() -> new RuntimeException("SubTurma não encontrada"));
 
         Semestre semestre = new Semestre();
+        subTurma.setSemestres(new ArrayList<>());
         subTurma.getSemestres().add(semestre);
         semestre.setNumero(subTurma.getSemestres().size());
         semestre.setSubTurma(subTurma);
