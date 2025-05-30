@@ -1,0 +1,19 @@
+URL: http://localhost:8080/curso
+
+{
+  "titulo": "Desenvolvimento de Sistemas",
+  "tipoDeCurso": "TECNICO",
+  "cargaHoraria": 1200,
+  "tolerancia": 15,
+  "unidadesCuricularesDTO": [
+    {
+      "nome": "Lógica de Programação",
+      "cargaHoraria": 80
+    },
+    {
+      "nome": "Banco de Dados",
+      "cargaHoraria": 100
+    }
+  ]
+}
+
